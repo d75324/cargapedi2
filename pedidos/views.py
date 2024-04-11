@@ -4,7 +4,7 @@ def home(request):
     return render(request, 'home.html')
 
 def form_carga_productos(request):
-    pass
+    return render(request, 'carga.html')
 
 def form_pedidos(request):
-    pass
+    return render(request, 'pedidos.html')

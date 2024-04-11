@@ -1,3 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <div class="container">
+    <br>
     <h4>Carga de Pedidos</h4>
+    <a href="{% url 'home' %}">volver a casa</a>
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4 col-lg-2 columna bordered-column">
+    # de Orden
+            </div>            
+        </div>
+    </div>
+    <br>
+    
+    <h3>Información del Cliente</h3>
+
+
+    <div class="row justify-content-end">
+        <div class="row">
+            <div class="col-sm-4 col-lg-5">
+    Apellido, Nombre
+            </div>
+            <div class="col-sm-4 col-lg-2">
+    Empresa
+            </div>
+            <div class="col-sm-4 col-lg-2">
+    CUIT
+            </div>                                    
+            <div class="col-sm-8 col-lg-2">
+    Teléfono
+            </div>            
+        </div>
+    </div>
+
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4 col-lg-5 columna bordered-column">
+    Fernandez, Alberto
+            </div>
+            <div class="col-sm-4 col-lg-2 columna bordered-column">
+    Ladris Unidos S.A.
+            </div>
+            <div class="col-sm-4 col-lg-2 columna bordered-column">
+    2323232323
+            </div>                                    
+            <div class="col-sm-8 col-lg-2 columna bordered-column">
+    454545455
+            </div>            
+        </div>
+    </div><br>
+
+    <h4>Items a Incluir</h4><hr>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-4 col-lg-1 columna bordered-column">
+SKU
+        </div>
+        <div class="col-sm-4 col-lg-4 columna bordered-column">
+Descripción
+        </div>
+        <div class="col-sm-4 col-lg-2 columna bordered-column">
+Precio
+        </div>
+        <div class="col-sm-8 col-lg-1 columna bordered-column">
+IVA Tipo
+        </div>
+        <div class="col-sm-8 col-lg-1 columna bordered-column">
+Cantidad
+        </div>
+        <div class="col-sm-8 col-lg-2 columna bordered-column">
+Subtotal
+        </div>            
+    </div>
 </div>
+
+    <br><br><br>
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-sm-4 col-lg-2 columna bordered-column text-center">
+        <i>Subtotal</i>
+            </div>
+            <div class="col-sm-4 col-lg-3 columna bordered-column text-center">
+        55,55
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-sm-4 col-lg-2 columna bordered-column text-center">
+        <i>IVA 21%</i>
+            </div>
+            <div class="col-sm-4 col-lg-3 columna bordered-column text-center">
+        355,55
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-sm-4 col-lg-2 columna bordered-column text-center">
+        <i>IVA 10.5</i>
+            </div>
+            <div class="col-sm-4 col-lg-3 columna bordered-column text-center">
+        55,55
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-sm-4 col-lg-2 columna bordered-column text-center">
+        <i>IVA Excento</i>
+            </div>
+            <div class="col-sm-4 col-lg-3 columna bordered-column text-center">
+        55,55
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-sm-4 col-lg-2 columna bordered-column text-center">
+        <strong>Total</strong>
+            </div>
+            <div class="col-sm-4 col-lg-3 columna bordered-column text-center">
+        55,55
+            </div>
+        </div>
+    </div>
+    
+<br>
+<div class="text-center">
+    <p> <strong> - - Gracias</strong> <i>lagarto</i><strong> por su </strong><i>abultada</i><strong> Orden de Compra - - </strong></p>
+</div>
+<hr><br>
+</div>
+
+    <style>
+        .bordered-column {
+    border: 1px solid #eaa5a5; /* Establece un borde de 1px sólido con un color gris tenue */
+    padding: 5px; /* Agrega un relleno para separar el contenido del borde */
+    border-radius: 5px; /* Agrega bordes redondeados para suavizar el borde */
+    margin-bottom: 10px; /* Agrega un margen inferior para separar las columnas */
+    margin-right: 1px; /* Agrega un margen derecho para separar las columnas */
+        }
+
+    </style>
+{% endblock %}
+
+
