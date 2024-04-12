@@ -54,31 +54,48 @@
         </div>
     </div><br>
 
-    <h4>Items a Incluir</h4><hr>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-4 col-lg-1 columna bordered-column">
-SKU
-        </div>
-        <div class="col-sm-4 col-lg-4 columna bordered-column">
-Descripción
-        </div>
-        <div class="col-sm-4 col-lg-2 columna bordered-column">
-Precio
-        </div>
-        <div class="col-sm-8 col-lg-1 columna bordered-column">
-IVA Tipo
-        </div>
-        <div class="col-sm-8 col-lg-1 columna bordered-column">
-Cantidad
-        </div>
-        <div class="col-sm-8 col-lg-2 columna bordered-column">
-Subtotal
-        </div>            
-    </div>
-</div>
 
-    <br><br><br>
+<hr>
+<hr>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>IVA</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto_for in productos %}
+            <tr>
+              <td>{{ producto_for.sku }}</td>
+              <td>{{ producto_for.description }}</td>
+              <td>{{ producto_for.price }}</td>
+              <td>{{ producto_for.price }}</td>
+              <td>{{ producto_for.price }}</td>
+              <td>{{ producto_for.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
+      <br>
+        <center>
+        <button type="button" class="btn btn-primary" href="#">Agregar más items</button>
+        <button type="button" class="btn btn-primary" href="#">Cerrar y descargar la Orden</button>
+        </center>
+        <br>
+    </div>
+
+<hr>
+<hr>
+    <br>
 
     <div class="container">
         <div class="row justify-content-end">
@@ -135,9 +152,9 @@ Subtotal
         </div>
     </div>
     
-<br>
+<br><br>
 <div class="text-center">
-    <p> <strong> - - Gracias</strong> <i>lagarto</i><strong> por su </strong><i>abultada</i><strong> Orden de Compra - - </strong></p>
+    <p> <strong> -  -  Gracias</strong> <i> muchacho</i><strong>  por  su </strong><i> alta</i><strong>  Orden  de  Compra  -  - </strong></p>
 </div>
 <hr><br>
 </div>
