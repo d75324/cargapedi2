@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Vendedores</title>
+</head>
+<body>
+    <h1>Lista de Vendedores</h1>
+    <ul>
+        {% for salesperson in salespersons %}
+        <li>{{ salesperson.nombre }}</li>
+        <!-- Puedes agregar más campos de Salesperson según sea necesario -->
+        {% endfor %}
+    </ul>
+</body>
+</html>

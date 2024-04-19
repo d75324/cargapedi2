@@ -30,3 +30,7 @@ def productos(request, id):
     context = {'productos': productos}
     return render(request, 'pedidos.html', context)
 
+def salesperson_view(request):
+    salespersons = Salesperson.objects.all()
+    context = {'salespersons': salespersons}
+    return render(request, 'salesperson.html', context)

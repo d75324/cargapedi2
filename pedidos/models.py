@@ -40,11 +40,18 @@ class Customer(models.Model):
         ]
     )
 
+class Salesperson(models.Model):
+    name = models.CharField(max_length=30)
+    
+    class Meta:
+        app_label = 'pedidos'
+
 # Esta clase representa una orden completa en el sistema
 class Order(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     customer = models.CharField(max_length=200)
-    
+    salesperson = models.ForeignKey(Salesperson, on_delete=models.CASCADE)
+
     def calculate_subtotal(self):
         return sum(line.subtotal for line in self.orderline_set.all())
 

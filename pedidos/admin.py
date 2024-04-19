@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product
+from .models import Product, Salesperson
 
 class DataBackEndFCO(admin.ModelAdmin):
     list_display = (
@@ -20,3 +20,11 @@ class DataBackEndFCO(admin.ModelAdmin):
                   )
     
 admin.site.register(Product, DataBackEndFCO)
+
+
+class SalespersonAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+      )
+    
+admin.site.register(Salesperson, SalespersonAdmin)
