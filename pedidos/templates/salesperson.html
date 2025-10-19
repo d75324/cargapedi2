@@ -1,3 +1,5 @@
+
+<!-- salesperson.html 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,8 +11,17 @@
     <ul>
         {% for salesperson in salespersons %}
         <li>{{ salesperson.nombre }}</li>
-        <!-- Puedes agregar más campos de Salesperson según sea necesario -->
         {% endfor %}
     </ul>
 </body>
 </html>
+-->
+
+<h4>Nada, solo HTML</h4>
+<hr>
+<!-- en lugar de form, llamé al formulario arnold para probar -->
+<form method="post">
+    {% csrf_token %}
+    {{ arnold.as_p }}
+</form>
+<hr>

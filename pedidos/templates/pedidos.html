@@ -7,17 +7,51 @@
     <h4>Carga de Pedidos</h4>
     <a href="{% url 'home' %}">volver a casa</a>
     <hr>
+    
+    <!--
     <div class="container text-center">
         <div class="row">
             <div class="col-sm-4 col-lg-2 columna bordered-column">
                 Orden Número : {{ order_instance.order_number }}
-            </div>            
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4 col-lg-2 columna bordered-column">
+                {% if order_instance.id %}
+                    Orden Número : {{ order_instance.order_number }}
+            </div>
+                {% else %}
+            <div class="col-sm-4 col-lg-2 columna bordered-column">
+                    Orden Número : No disponible
+            </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4 col-lg-2 columna bordered-column">
+                Orden Número : {{ order_instance.order_number }}
+            </div>
         </div>
     </div>
     <div class="container text-center">
         <div class="row">
             <div class="col-sm-4 col-lg-2 columna bordered-column">
-    Vendedor
+    
+                <form method="post">
+                    {% csrf_token %}
+                    <p>V: </p>{{ arnold.as_p }}
+                </form>
+
+
             </div>            
         </div>
     </div>
@@ -47,10 +81,10 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-sm-4 col-lg-5 columna bordered-column">
-    Fernandez, Alberto
+    Apellido, Nombre
             </div>
             <div class="col-sm-4 col-lg-2 columna bordered-column">
-    Ladris Unidos S.A.
+    Unidos S.A.
             </div>
             <div class="col-sm-4 col-lg-2 columna bordered-column">
     2323232323

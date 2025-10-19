@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
-from .models import Product
+from .models import Product, Salesperson
 from django.shortcuts import render
-from .forms import *
+from .forms import SalespersonForm, SalespersonForm2
 
 def home(request):
     return render(request, 'home.html')
@@ -34,3 +34,28 @@ def salesperson_view(request):
     salespersons = Salesperson.objects.all()
     context = {'salespersons': salespersons}
     return render(request, 'salesperson.html', context)
+
+# en lugar de form le pongo arnold de nombre y uso este nombre (arnold) para
+# llamarla desde el template:
+
+def salesperson_view(request):
+    if request.method == 'POST':
+        arnold = SalespersonForm(request.POST)
+        if arnold.is_valid():
+            selected_salesperson_id = arnold.cleaned_data['salesperson']
+    else:
+        arnold = SalespersonForm()
+
+    context = {'arnold': arnold}
+    return render(request, 'salesperson.html', context)
+
+def rustico_view(request):
+    if request.method == 'POST':
+        romualdo = SalespersonForm2(request.POST)
+        if romualdo.is_valid():
+            selected_salesperson_id = romualdo.cleaned_data['salesperson']
+        else:
+            romualdo = SalespersonForm2()
+
+    context = {'romualdo': romualdo}
+    return render(request, 'rustico.html', context)

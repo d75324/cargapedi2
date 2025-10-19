@@ -36,12 +36,12 @@ class Customer(models.Model):
     company_tax_id = models.IntegerField(
         validators=[
             MinLengthValidator(8),
-            MaxLengthValidator(8)
+            MaxLengthValidator(8),
         ]
     )
 
 class Salesperson(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, default=1)
     
     class Meta:
         app_label = 'pedidos'
@@ -92,3 +92,11 @@ class OrderLine(models.Model):
     def save(self, *args, **kwargs):
         self.subtotal = self.calculate_subtotal()
         super().save(*args, **kwargs)
+
+class OrderNumber(models.Model):
+    last_number = models.IntegerField(default=0)
+
+    def increment(self):
+        self.last_number += 1
+        self.save()
+        return self.last_number
